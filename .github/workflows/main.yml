@@ -25,4 +25,4 @@ jobs:
           name: documentation.zip
           folderId: ${{ secrets.folderID }}
           credentials: ${{ secrets.credentials }}
-          encoded: false
+          encoded: true
