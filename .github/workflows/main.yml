@@ -27,7 +27,7 @@ jobs:
       - name: Upload to gdrive
         uses: lucabrodohshl/gdrive-upload-action@main
         with:
-          filename: archive
+          filename: archive.zip
           folderId: ${{ secrets.folderID }}
           credentials: ${{ secrets.credentials }}
           encoded: true
