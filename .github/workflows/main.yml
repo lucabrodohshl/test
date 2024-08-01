@@ -16,8 +16,12 @@ jobs:
 
       - name: Archive files
         run: |
+              zip -r archive.zip *
               mkdir archive
-              cp * archive/
+              cp archive.zip archive/
+              unzip archive/archive.zip -d archive/
+              rm archive/archive.zip
+
       - name: Upload to gdrive
         uses: lucabrodohshl/gdrive-upload-action@main
         with:
