@@ -15,7 +15,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Archive files
-        run: zip -r archive.zip *
+        run: |
+            zip -r archive.zip *
+            ls
 
       - name: Upload to gdrive
         uses: mathisve/gdrive-upload-action@main
