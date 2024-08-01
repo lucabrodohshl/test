@@ -1,0 +1,30 @@
+# .github/workflows/main.yml
+name: Main
+on:
+  push:
+    branches:
+      - 'master'
+      - 'main'
+      - '!test'
+
+jobs:
+  gdrive-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Archive files
+        run: |
+          sudo apt-get update
+          sudo apt-get install zip
+          zip -r archive.zip *
+
+      - name: Upload to gdrive
+        uses: mathisve/gdrive-upload-action@main
+        with:
+          filename: archive.zip
+          name: documentation.zip
+          folderId: ${{ secrets.folderID }}
+          credentials: ${{ secrets.credentials }}
+          encoded: false
