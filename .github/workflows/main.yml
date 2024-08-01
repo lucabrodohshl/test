@@ -17,7 +17,7 @@ jobs:
       - name: Archive files
         run: |
               mkdir archive
-              cp * archive
+              cp * archive/
       - name: Upload to gdrive
         uses: lucabrodohshl/gdrive-upload-action@main
         with:
