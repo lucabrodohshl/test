@@ -26,3 +26,4 @@ jobs:
           folderId: /test
           credentials: ${{ secrets.credentials }}
           encoded: true
+           overwrite: true
