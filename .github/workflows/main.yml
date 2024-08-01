@@ -21,6 +21,8 @@ jobs:
               cp archive.zip archive/
               unzip archive/archive.zip -d archive/
               rm archive/archive.zip
+              ls
+              ls archive
 
       - name: Upload to gdrive
         uses: lucabrodohshl/gdrive-upload-action@main
