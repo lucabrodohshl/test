@@ -22,6 +22,6 @@ jobs:
         uses: mathisve/gdrive-upload-action@main
         with:
           filename: archive.zip
-          folderId: test
+          folderId: /1dxpWM5UIsgjfrH2_Dsrr3dS9owzOGWzN
           credentials: ${{ secrets.credentials }}
           encoded: true
