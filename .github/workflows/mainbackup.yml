@@ -1,0 +1,29 @@
+# .github/workflows/main.yml
+name: Main
+on:
+  push:
+    branches:
+      - 'master'
+      - 'main'
+      - '!test'
+      
+jobs:
+  gdrive-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Archive files
+        run: |
+            zip -r archive.zip *
+            ls
+
+      - name: Upload to gdrive
+        uses: lucabrodohshl/gdrive-upload-action@main
+        with:
+          filename: archive.zip
+          folderId: ${{ secrets.folderID }}
+          credentials: ${{ secrets.credentials }}
+          encoded: true
+          overwrite: true
