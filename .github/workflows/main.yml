@@ -20,7 +20,7 @@ jobs:
             ls
 
       - name: Upload to gdrive
-        uses: mathisve/gdrive-upload-action@main
+        uses: lucabrodohshl/gdrive-upload-action@main
         with:
           filename: archive.zip
           folderId: ${{ secrets.folderID }}
