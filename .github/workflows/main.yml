@@ -23,7 +23,8 @@ jobs:
         uses: mathisve/gdrive-upload-action@main
         with:
           filename: archive.zip
-          folderId: 1dxpWM5UIsgjfrH2_Dsrr3dS9owzOGWzN
+          folderId: ${{ secrets.folderID }}
           credentials: ${{ secrets.credentials }}
           encoded: true
           overwrite: true
+
