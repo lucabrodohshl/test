@@ -16,11 +16,16 @@ jobs:
 
       - name: Archive files
         run: |
-            zip -r archive.zip *
-            ls
+              zip -r archive.zip *
+              mkdir archive
+              cp archive.zip archive/
+              unzip archive/archive.zip -d archive/
+              rm archive/archive.zip
+              ls
+              ls archive
 
       - name: Upload to gdrive
-        uses: mathisve/gdrive-upload-action@main
+        uses: lucabrodohshl/gdrive-upload-action@main
         with:
           filename: archive.zip
           folderId: ${{ secrets.folderID }}
